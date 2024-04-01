@@ -20,3 +20,21 @@ Install the required dependencies
 ```pip install -r src/requirements```
 
 If you want to do some UI changes, download and install the latest wxFormBuilder from the [wxFormBuilder Homepage](https://github.com/wxFormBuilder/wxFormBuilder).
+
+You can start the vatservice-gui by running the following command:
+
+```python src/vatservice.py```
+
+## Some screenshots
+
+### Single validation
+
+![single validation](images/single.png)
+
+### Batch validation
+
+![batch validation](images/batch.png)
+
+### Configuration
+
+![configuration](images/config.png)
