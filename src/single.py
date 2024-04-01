@@ -12,8 +12,8 @@ def validatesingle(key1='',
                    street='',
                    zip='',
                    town='',
-                   type=helper.load_value_from_json_file('interface'),
-                   lang=helper.load_value_from_json_file('language')):
+                   type='vies',
+                   lang='en'):
 
     # create POST request with all input parameters
     http = urllib3.PoolManager()
