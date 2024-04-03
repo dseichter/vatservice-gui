@@ -1,0 +1,48 @@
+name: Build Binaries
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build-windows-binary:
+        runs-on: windows-latest
+
+        steps:
+            - name: Set up Python
+              uses: actions/setup-python@v2
+              with:
+                python-version: 3.12
+
+            - name: Install dependencies
+              run: pip install pyinstaller
+
+            - name: Build Windows binary
+              run: pyinstaller --onefile -w src/vatservice.py
+
+            - name: Upload artifact
+              uses: actions/upload-artifact@v2
+              with:
+                    name: windows-binary
+                    path: dist/vatservice-gui.exe
+
+    build-linux-binary:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Set up Python
+              uses: actions/setup-python@v2
+              with:
+                python-version: 3.12
+
+            - name: Install dependencies
+              run: pip install pyinstaller
+
+            - name: Build Linux binary
+              run: pyinstaller --onefile src/vatservice.py
+
+            - name: Upload artifact
+              uses: actions/upload-artifact@v2
+              with:
+                    name: linux-binary
+                    path: dist/vatservice-gui
