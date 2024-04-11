@@ -17,7 +17,7 @@ Create and activate an environment by running the following command:
 
 Install the required dependencies
 
-```pip install -r src/requirements```
+```pip install -r src/requirements.txt```
 
 If you want to do some UI changes, download and install the latest wxFormBuilder from the [wxFormBuilder Homepage](https://github.com/wxFormBuilder/wxFormBuilder).
 
