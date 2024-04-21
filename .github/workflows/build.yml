@@ -16,7 +16,7 @@ jobs:
                 python-version: 3.12
 
             - name: Install dependencies
-              run: pip install pyinstaller
+              run: pip install -r src/requirements.txt
 
             - name: Build Windows binary
               run: pyinstaller --onefile -w src/vatservice.py
@@ -36,7 +36,7 @@ jobs:
                 python-version: 3.12
 
             - name: Install dependencies
-              run: pip install pyinstaller
+              run: pip install -r src/requirements.txt
 
             - name: Build Linux binary
               run: pyinstaller --onefile src/vatservice.py
