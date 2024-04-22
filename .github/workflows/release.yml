@@ -42,7 +42,7 @@ jobs:
             run: pyinstaller --onefile -w src/vatservice.py -n vatservice-gui-windows.exe
 
           - name: Upload artifact
-            uses: actions/upload-artifact@v2
+            uses: actions/upload-artifact@v4
             with:
                   name: vatservice-gui-windows.exe
                   path: dist/vatservice-gui-windows.exe   
@@ -67,7 +67,7 @@ jobs:
             run: pyinstaller --onefile src/vatservice.py -n vatservice-gui-linux
 
           - name: Upload artifact
-            uses: actions/upload-artifact@v2
+            uses: actions/upload-artifact@v4
             with:
               name: vatservice-gui-linux
               path: dist/vatservice-gui-linux
