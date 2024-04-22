@@ -1,5 +1,10 @@
+import urllib3
 import json
+import logging
 
+
+VERSION = "v0.0.1"
+URL = 'https://api.github.com/repos/dseichter/vatservice-gui/releases/latest'
 
 # load value from json file with given key
 def load_value_from_json_file(key):
@@ -10,3 +15,15 @@ def load_value_from_json_file(key):
         return None
 
     return data[key]
+
+
+def check_for_new_release():
+    try:
+        http = urllib3.PoolManager()
+        r = http.request('GET', URL)
+        data = json.loads(r.data.decode('utf-8'))
+        latest_version = data['tag_name']
+        return latest_version != VERSION
+    except Exception as e:
+        logging.error(f"Error checking for new release: {e}")
+        return False
