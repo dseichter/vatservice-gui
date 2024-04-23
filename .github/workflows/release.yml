@@ -32,7 +32,7 @@ jobs:
             uses: actions/checkout@v4
 
           - name: Set up Python
-            uses: actions/setup-python@v2
+            uses: actions/setup-python@v5
             with:
               python-version: 3.12
 
@@ -60,7 +60,7 @@ jobs:
             run: sudo apt-get install build-essential libgtk-3-dev
 
           - name: Set up Python
-            uses: actions/setup-python@v2
+            uses: actions/setup-python@v5
             with:
               python-version: 3.12
 
@@ -95,7 +95,7 @@ jobs:
           with:
             upload_url: ${{ needs.create-release.outputs.upload_url }} 
             asset_path: vatservice-gui-linux
-            asset_name: vatservice-gui-linux-${{ github.ref }}
+            asset_name: vatservice-gui-linux-${{ github.ref_name }}
             asset_content_type: application/octet-stream
 
         - name: Upload Release Asset Windows
@@ -105,5 +105,5 @@ jobs:
           with:
             upload_url: ${{ needs.create-release.outputs.upload_url }} 
             asset_path: vatservice-gui-windows.exe
-            asset_name: vatservice-gui-windows-${{ github.ref }}.exe
+            asset_name: vatservice-gui-windows-${{ github.ref_name }}.exe
             asset_content_type: application/octet-stream            
