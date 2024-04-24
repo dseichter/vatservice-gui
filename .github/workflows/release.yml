@@ -54,7 +54,7 @@ jobs:
           - name: Create and start virtual environment
             run: |
               python3 -m venv venv
-              source venv/Scripts/activate
+              source venv/bin/activate
 
           - name: Install dependencies
             run: pip install -r src/requirements.txt
