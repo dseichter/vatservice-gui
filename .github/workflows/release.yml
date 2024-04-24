@@ -22,8 +22,8 @@ jobs:
           - name: Create and start virtual environment
             run: |
               python3 -m venv venv
-              source venv/bin/activate
-              
+              venv\Scripts\activate.bat
+
           - name: Install dependencies
             run: pip install -r src/requirements.txt
 
@@ -54,7 +54,7 @@ jobs:
           - name: Create and start virtual environment
             run: |
               python3 -m venv venv
-              source venv/bin/activate
+              source venv/Scripts/activate
 
           - name: Install dependencies
             run: pip install -r src/requirements.txt
