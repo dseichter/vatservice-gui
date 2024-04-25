@@ -261,7 +261,7 @@ class MainFrame ( wx.Frame ):
         self.buttonSaveConfig.Bind( wx.EVT_BUTTON, self.saveConfig )
         self.Bind( wx.EVT_MENU, self.vatserviceClose, id = self.file_close.GetId() )
         self.Bind( wx.EVT_MENU, self.vatserviceGitHub, id = self.github.GetId() )
-        self.Bind( wx.EVT_UPDATE_UI, self.checkForUpdates, id = self.update.GetId() )
+        self.Bind( wx.EVT_MENU, self.checkForUpdates, id = self.update.GetId() )
         self.Bind( wx.EVT_MENU, self.vatserviceAbout, id = self.about.GetId() )
 
     def __del__( self ):

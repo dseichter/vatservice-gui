@@ -3,7 +3,7 @@ import json
 import logging
 
 
-VERSION = "v0.0.1"
+VERSION = "v0.0.1g"
 URL = 'https://api.github.com/repos/dseichter/vatservice-gui/releases/latest'
 
 
