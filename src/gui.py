@@ -24,7 +24,7 @@ ID_ABOUT = 1002
 class MainFrame ( wx.Frame ):
 
     def __init__( self, parent ):
-        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 642,552 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = _(u"VAT Service"), pos = wx.DefaultPosition, size = wx.Size( 642,552 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
         self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -240,6 +240,9 @@ class MainFrame ( wx.Frame ):
         self.github = wx.MenuItem( self.help, ID_GITHUB, _(u"github"), _(u"Go to GitHub Repository"), wx.ITEM_NORMAL )
         self.help.Append( self.github )
 
+        self.update = wx.MenuItem( self.help, wx.ID_ANY, _(u"Update"), wx.EmptyString, wx.ITEM_NORMAL )
+        self.help.Append( self.update )
+
         self.about = wx.MenuItem( self.help, ID_ABOUT, _(u"About"), _(u"About vatservice-gui"), wx.ITEM_NORMAL )
         self.help.Append( self.about )
 
@@ -258,6 +261,7 @@ class MainFrame ( wx.Frame ):
         self.buttonSaveConfig.Bind( wx.EVT_BUTTON, self.saveConfig )
         self.Bind( wx.EVT_MENU, self.vatserviceClose, id = self.file_close.GetId() )
         self.Bind( wx.EVT_MENU, self.vatserviceGitHub, id = self.github.GetId() )
+        self.Bind( wx.EVT_UPDATE_UI, self.checkForUpdates, id = self.update.GetId() )
         self.Bind( wx.EVT_MENU, self.vatserviceAbout, id = self.about.GetId() )
 
     def __del__( self ):
@@ -284,6 +288,9 @@ class MainFrame ( wx.Frame ):
         event.Skip()
 
     def vatserviceGitHub( self, event ):
+        event.Skip()
+
+    def checkForUpdates( self, event ):
         event.Skip()
 
     def vatserviceAbout( self, event ):
