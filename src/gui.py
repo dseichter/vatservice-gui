@@ -138,7 +138,7 @@ class MainFrame ( wx.Frame ):
         self.panelSingle.SetSizer( fgSizer2 )
         self.panelSingle.Layout()
         fgSizer2.Fit( self.panelSingle )
-        self.m_notebook3.AddPage( self.panelSingle, _(u"Single"), True )
+        self.m_notebook3.AddPage( self.panelSingle, _(u"Single"), False )
         self.panelBatch = wx.Panel( self.m_notebook3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
         fgSizer3 = wx.FlexGridSizer( 0, 2, 0, 0 )
         fgSizer3.AddGrowableCol( 1 )
@@ -221,7 +221,7 @@ class MainFrame ( wx.Frame ):
         self.panelConfig.SetSizer( fgSizer31 )
         self.panelConfig.Layout()
         fgSizer31.Fit( self.panelConfig )
-        self.m_notebook3.AddPage( self.panelConfig, _(u"Configuration"), False )
+        self.m_notebook3.AddPage( self.panelConfig, _(u"Configuration"), True )
 
         bSizer2.Add( self.m_notebook3, 1, wx.EXPAND |wx.ALL, 5 )
 
@@ -239,6 +239,9 @@ class MainFrame ( wx.Frame ):
         self.help = wx.Menu()
         self.github = wx.MenuItem( self.help, ID_GITHUB, _(u"github"), _(u"Go to GitHub Repository"), wx.ITEM_NORMAL )
         self.help.Append( self.github )
+
+        self.update = wx.MenuItem( self.help, wx.ID_ANY, _(u"Update"), wx.EmptyString, wx.ITEM_NORMAL )
+        self.help.Append( self.update )
 
         self.about = wx.MenuItem( self.help, ID_ABOUT, _(u"About"), _(u"About vatservice-gui"), wx.ITEM_NORMAL )
         self.help.Append( self.about )
@@ -258,6 +261,7 @@ class MainFrame ( wx.Frame ):
         self.buttonSaveConfig.Bind( wx.EVT_BUTTON, self.saveConfig )
         self.Bind( wx.EVT_MENU, self.vatserviceClose, id = self.file_close.GetId() )
         self.Bind( wx.EVT_MENU, self.vatserviceGitHub, id = self.github.GetId() )
+        self.Bind( wx.EVT_UPDATE_UI, self.checkForUpdates, id = self.update.GetId() )
         self.Bind( wx.EVT_MENU, self.vatserviceAbout, id = self.about.GetId() )
 
     def __del__( self ):
@@ -284,6 +288,9 @@ class MainFrame ( wx.Frame ):
         event.Skip()
 
     def vatserviceGitHub( self, event ):
+        event.Skip()
+
+    def checkForUpdates( self, event ):
         event.Skip()
 
     def vatserviceAbout( self, event ):
