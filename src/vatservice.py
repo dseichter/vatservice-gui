@@ -25,7 +25,7 @@ class CalcFrame(gui.MainFrame):
         self.comboBoxInterface.SetValue(helper.load_value_from_json_file('interface'))
         self.comboBoxLanguage.SetValue(helper.load_value_from_json_file('language'))
         self.textCSVdelimiter.SetValue(helper.load_value_from_json_file('delimiter'))
-        
+
         # load image from file
         image = wx.Image("../images/favicon.png", wx.BITMAP_TYPE_ANY)
         image = image.Scale(32, 32, wx.IMAGE_QUALITY_HIGH)
