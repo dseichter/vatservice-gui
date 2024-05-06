@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-###########################################################################
-## Python code generated with wxFormBuilder (version 4.1.0-0-g733bf3d)
-## http://www.wxformbuilder.org/
-##
-## PLEASE DO *NOT* EDIT THIS FILE!
-###########################################################################
+# #########################################################################
+# # Python code generated with wxFormBuilder (version 4.1.0-65681cfc)
+# # http://www.wxformbuilder.org/
+# #
+# # PLEASE DO *NOT* EDIT THIS FILE!
+# #########################################################################
 
 import wx
 import wx.xrc
@@ -17,283 +17,237 @@ ID_CLOSE = 1000
 ID_GITHUB = 1001
 ID_ABOUT = 1002
 
-###########################################################################
-## Class MainFrame
-###########################################################################
 
-class MainFrame ( wx.Frame ):
-
-    def __init__( self, parent ):
-        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = _(u"VAT Service"), pos = wx.DefaultPosition, size = wx.Size( 642,552 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
-
-        self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
-
-        bSizer2 = wx.BoxSizer( wx.VERTICAL )
-
-        self.m_notebook3 = wx.Notebook( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.panelSingle = wx.Panel( self.m_notebook3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-        fgSizer2 = wx.FlexGridSizer( 0, 2, 0, 0 )
-        fgSizer2.AddGrowableCol( 1 )
-        fgSizer2.SetFlexibleDirection( wx.BOTH )
-        fgSizer2.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
-
-        self.staticText_ownvat = wx.StaticText( self.panelSingle, wx.ID_ANY, _(u"Own VAT"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticText_ownvat.Wrap( -1 )
-
-        fgSizer2.Add( self.staticText_ownvat, 0, wx.ALL, 5 )
-
-        self.textOwnvat = wx.TextCtrl( self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer2.Add( self.textOwnvat, 1, wx.ALL|wx.EXPAND, 5 )
-
-        self.staticText_foreignvat = wx.StaticText( self.panelSingle, wx.ID_ANY, _(u"Foreign VAT"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticText_foreignvat.Wrap( -1 )
-
-        fgSizer2.Add( self.staticText_foreignvat, 0, wx.ALL, 5 )
-
-        self.textForeignvat = wx.TextCtrl( self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer2.Add( self.textForeignvat, 1, wx.ALL|wx.EXPAND, 5 )
-
-        self.staticText_company = wx.StaticText( self.panelSingle, wx.ID_ANY, _(u"Company"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticText_company.Wrap( -1 )
-
-        fgSizer2.Add( self.staticText_company, 0, wx.ALL, 5 )
-
-        self.textCompany = wx.TextCtrl( self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer2.Add( self.textCompany, 1, wx.ALL|wx.EXPAND, 5 )
-
-        self.staticText_street = wx.StaticText( self.panelSingle, wx.ID_ANY, _(u"Street"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticText_street.Wrap( -1 )
-
-        fgSizer2.Add( self.staticText_street, 0, wx.ALL, 5 )
-
-        self.textStreet = wx.TextCtrl( self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer2.Add( self.textStreet, 1, wx.ALL|wx.EXPAND, 5 )
-
-        self.staticText_zip = wx.StaticText( self.panelSingle, wx.ID_ANY, _(u"ZIP"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticText_zip.Wrap( -1 )
-
-        fgSizer2.Add( self.staticText_zip, 0, wx.ALL, 5 )
-
-        self.textZip = wx.TextCtrl( self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer2.Add( self.textZip, 1, wx.ALL|wx.EXPAND, 5 )
-
-        self.staticText_town = wx.StaticText( self.panelSingle, wx.ID_ANY, _(u"Town"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticText_town.Wrap( -1 )
-
-        fgSizer2.Add( self.staticText_town, 0, wx.ALL, 5 )
-
-        self.textTown = wx.TextCtrl( self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer2.Add( self.textTown, 1, wx.ALL|wx.EXPAND, 5 )
+# #########################################################################
+# # Class MainFrame
+# #########################################################################
 
 
-        fgSizer2.Add( ( 0, 0), 1, wx.EXPAND, 5 )
+class MainFrame(wx.Frame):
 
-        self.clearButton = wx.Button( self.panelSingle, wx.ID_ANY, _(u"clear"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer2.Add( self.clearButton, 0, wx.ALL, 5 )
+    def __init__(self, parent):
+        wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=_(u"VAT Service"), pos=wx.DefaultPosition, size=wx.Size(642, 552), style=wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL)
 
+        self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
 
-        fgSizer2.Add( ( 0, 0), 1, wx.EXPAND, 5 )
+        bSizer2 = wx.BoxSizer(wx.VERTICAL)
 
-        self.buttonValidate1 = wx.Button( self.panelSingle, wx.ID_ANY, _(u"Validate"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer2.Add( self.buttonValidate1, 1, wx.ALL|wx.EXPAND, 5 )
+        self.m_notebook3 = wx.Notebook(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0)
+        self.panelSingle = wx.Panel(self.m_notebook3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
+        fgSizer2 = wx.FlexGridSizer(0, 2, 0, 0)
+        fgSizer2.AddGrowableCol(1)
+        fgSizer2.SetFlexibleDirection(wx.BOTH)
+        fgSizer2.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED)
 
+        self.staticText_ownvat = wx.StaticText(self.panelSingle, wx.ID_ANY, _(u"Own VAT"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticText_ownvat.Wrap(-1)
 
-        fgSizer2.Add( ( 0, 0), 1, wx.EXPAND, 5 )
+        fgSizer2.Add(self.staticText_ownvat, 0, wx.ALL, 5)
+        self.textOwnvat = wx.TextCtrl(self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer2.Add(self.textOwnvat, 1, wx.ALL | wx.EXPAND, 5)
+        self.staticText_foreignvat = wx.StaticText(self.panelSingle, wx.ID_ANY, _(u"Foreign VAT"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticText_foreignvat.Wrap(-1)
 
-        self.m_staticText_ValidationResult = wx.StaticText( self.panelSingle, wx.ID_ANY, _(u"Validation Result"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.m_staticText_ValidationResult.Wrap( -1 )
+        fgSizer2.Add(self.staticText_foreignvat, 0, wx.ALL, 5)
+        self.textForeignvat = wx.TextCtrl(self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer2.Add(self.textForeignvat, 1, wx.ALL | wx.EXPAND, 5)
+        self.staticText_company = wx.StaticText(self.panelSingle, wx.ID_ANY, _(u"Company"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticText_company.Wrap(-1)
 
-        self.m_staticText_ValidationResult.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        fgSizer2.Add(self.staticText_company, 0, wx.ALL, 5)
+        self.textCompany = wx.TextCtrl(self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer2.Add(self.textCompany, 1, wx.ALL | wx.EXPAND, 5)
+        self.staticText_street = wx.StaticText(self.panelSingle, wx.ID_ANY, _(u"Street"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticText_street.Wrap(-1)
 
-        fgSizer2.Add( self.m_staticText_ValidationResult, 0, wx.ALL, 5 )
+        fgSizer2.Add(self.staticText_street, 0, wx.ALL, 5)
+        self.textStreet = wx.TextCtrl(self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer2.Add(self.textStreet, 1, wx.ALL | wx.EXPAND, 5)
+        self.staticText_zip = wx.StaticText(self.panelSingle, wx.ID_ANY, _(u"ZIP"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticText_zip.Wrap(-1)
 
-        self.staticText_isvalid = wx.StaticText( self.panelSingle, wx.ID_ANY, _(u"Valid"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticText_isvalid.Wrap( -1 )
+        fgSizer2.Add(self.staticText_zip, 0, wx.ALL, 5)
+        self.textZip = wx.TextCtrl(self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer2.Add(self.textZip, 1, wx.ALL | wx.EXPAND, 5)
+        self.staticText_town = wx.StaticText(self.panelSingle, wx.ID_ANY, _(u"Town"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticText_town.Wrap(-1)
 
-        fgSizer2.Add( self.staticText_isvalid, 0, wx.ALL, 5 )
+        fgSizer2.Add(self.staticText_town, 0, wx.ALL, 5)
+        self.textTown = wx.TextCtrl(self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer2.Add(self.textTown, 1, wx.ALL | wx.EXPAND, 5)
 
-        self.textResultIsValid = wx.TextCtrl( self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer2.Add( self.textResultIsValid, 0, wx.ALL, 5 )
+        fgSizer2.Add((0, 0), 1, wx.EXPAND, 5)
+        self.clearButton = wx.Button(self.panelSingle, wx.ID_ANY, _(u"clear"), wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer2.Add(self.clearButton, 0, wx.ALL, 5)
 
-        self.staticText_result = wx.StaticText( self.panelSingle, wx.ID_ANY, _(u"Result"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticText_result.Wrap( -1 )
+        fgSizer2.Add((0, 0), 1, wx.EXPAND, 5)
+        self.buttonValidate1 = wx.Button(self.panelSingle, wx.ID_ANY, _(u"Validate"), wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer2.Add(self.buttonValidate1, 1, wx.ALL | wx.EXPAND, 5)
 
-        fgSizer2.Add( self.staticText_result, 0, wx.ALL, 5 )
+        fgSizer2.Add((0, 0), 1, wx.EXPAND, 5)
+        self.m_staticText_ValidationResult = wx.StaticText(self.panelSingle, wx.ID_ANY, _(u"Validation Result"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.m_staticText_ValidationResult.Wrap(-1)
 
-        self.textResultCode = wx.TextCtrl( self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer2.Add( self.textResultCode, 0, wx.ALL, 5 )
+        self.m_staticText_ValidationResult.SetFont(wx.Font(wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString))
 
-        self.staticText_details = wx.StaticText( self.panelSingle, wx.ID_ANY, _(u"Details"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticText_details.Wrap( -1 )
+        fgSizer2.Add(self.m_staticText_ValidationResult, 0, wx.ALL, 5)
+        self.staticText_isvalid = wx.StaticText(self.panelSingle, wx.ID_ANY, _(u"Valid"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticText_isvalid.Wrap(-1)
 
-        fgSizer2.Add( self.staticText_details, 0, wx.ALL, 5 )
+        fgSizer2.Add(self.staticText_isvalid, 0, wx.ALL, 5)
+        self.textResultIsValid = wx.TextCtrl(self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer2.Add(self.textResultIsValid, 0, wx.ALL, 5)
+        self.staticText_result = wx.StaticText(self.panelSingle, wx.ID_ANY, _(u"Result"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticText_result.Wrap(-1)
 
-        self.textResultDetails = wx.TextCtrl( self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE )
-        self.textResultDetails.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-        self.textResultDetails.SetMinSize( wx.Size( -1,100 ) )
+        fgSizer2.Add(self.staticText_result, 0, wx.ALL, 5)
+        self.textResultCode = wx.TextCtrl(self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer2.Add(self.textResultCode, 0, wx.ALL, 5)
+        self.staticText_details = wx.StaticText(self.panelSingle, wx.ID_ANY, _(u"Details"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticText_details.Wrap(-1)
 
-        fgSizer2.Add( self.textResultDetails, 1, wx.ALL|wx.EXPAND, 5 )
+        fgSizer2.Add(self.staticText_details, 0, wx.ALL, 5)
+        self.textResultDetails = wx.TextCtrl(self.panelSingle, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE)
+        self.textResultDetails.SetFont(wx.Font(wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString))
+        self.textResultDetails.SetMinSize(wx.Size(-1, 100))
 
-
-        self.panelSingle.SetSizer( fgSizer2 )
+        fgSizer2.Add(self.textResultDetails, 1, wx.ALL | wx.EXPAND, 5)
+        self.panelSingle.SetSizer(fgSizer2)
         self.panelSingle.Layout()
-        fgSizer2.Fit( self.panelSingle )
-        self.m_notebook3.AddPage( self.panelSingle, _(u"Single"), False )
-        self.panelBatch = wx.Panel( self.m_notebook3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-        fgSizer3 = wx.FlexGridSizer( 0, 2, 0, 0 )
-        fgSizer3.AddGrowableCol( 1 )
-        fgSizer3.SetFlexibleDirection( wx.BOTH )
-        fgSizer3.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+        fgSizer2.Fit(self.panelSingle)
+        self.m_notebook3.AddPage(self.panelSingle, _(u"Single"), False)
+        self.panelBatch = wx.Panel(self.m_notebook3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
+        fgSizer3 = wx.FlexGridSizer(0, 2, 0, 0)
+        fgSizer3.AddGrowableCol(1)
+        fgSizer3.SetFlexibleDirection(wx.BOTH)
+        fgSizer3.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED)
 
-        self.staticText_Inputfile = wx.StaticText( self.panelBatch, wx.ID_ANY, _(u"Input file"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticText_Inputfile.Wrap( -1 )
+        self.staticText_Inputfile = wx.StaticText(self.panelBatch, wx.ID_ANY, _(u"Input file"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticText_Inputfile.Wrap(-1)
 
-        fgSizer3.Add( self.staticText_Inputfile, 0, wx.ALL, 5 )
+        fgSizer3.Add(self.staticText_Inputfile, 0, wx.ALL, 5)
+        self.filePickerInput = wx.FilePickerCtrl(self.panelBatch, wx.ID_ANY, wx.EmptyString, _(u"Select a file"), _(u"*.*"), wx.DefaultPosition, wx.DefaultSize, wx.FLP_DEFAULT_STYLE)
+        fgSizer3.Add(self.filePickerInput, 1, wx.ALL | wx.EXPAND, 5)
+        self.staticText_Outputfile = wx.StaticText(self.panelBatch, wx.ID_ANY, _(u"Output file"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticText_Outputfile.Wrap(-1)
 
-        self.filePickerInput = wx.FilePickerCtrl( self.panelBatch, wx.ID_ANY, wx.EmptyString, _(u"Select a file"), _(u"*.*"), wx.DefaultPosition, wx.DefaultSize, wx.FLP_DEFAULT_STYLE )
-        fgSizer3.Add( self.filePickerInput, 1, wx.ALL|wx.EXPAND, 5 )
+        fgSizer3.Add(self.staticText_Outputfile, 0, wx.ALL, 5)
+        self.m_filePickerOutput = wx.FilePickerCtrl(self.panelBatch, wx.ID_ANY, wx.EmptyString, _(u"Select a file"), _(u"*.*"), wx.DefaultPosition, wx.DefaultSize, wx.FLP_DEFAULT_STYLE)
+        fgSizer3.Add(self.m_filePickerOutput, 1, wx.ALL | wx.EXPAND, 5)
 
-        self.staticText_Outputfile = wx.StaticText( self.panelBatch, wx.ID_ANY, _(u"Output file"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticText_Outputfile.Wrap( -1 )
-
-        fgSizer3.Add( self.staticText_Outputfile, 0, wx.ALL, 5 )
-
-        self.m_filePickerOutput = wx.FilePickerCtrl( self.panelBatch, wx.ID_ANY, wx.EmptyString, _(u"Select a file"), _(u"*.*"), wx.DefaultPosition, wx.DefaultSize, wx.FLP_DEFAULT_STYLE )
-        fgSizer3.Add( self.m_filePickerOutput, 1, wx.ALL|wx.EXPAND, 5 )
-
-
-        fgSizer3.Add( ( 0, 0), 1, wx.EXPAND, 5 )
-
-        self.buttonValidate = wx.Button( self.panelBatch, wx.ID_ANY, _(u"Start Validation"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer3.Add( self.buttonValidate, 1, wx.EXPAND|wx.ALL, 5 )
-
-
-        self.panelBatch.SetSizer( fgSizer3 )
+        fgSizer3.Add((0, 0), 1, wx.EXPAND, 5)
+        self.buttonValidate = wx.Button(self.panelBatch, wx.ID_ANY, _(u"Start Validation"), wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer3.Add(self.buttonValidate, 1, wx.EXPAND | wx.ALL, 5)
+        self.panelBatch.SetSizer(fgSizer3)
         self.panelBatch.Layout()
-        fgSizer3.Fit( self.panelBatch )
-        self.m_notebook3.AddPage( self.panelBatch, _(u"Batch"), False )
-        self.panelConfig = wx.Panel( self.m_notebook3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-        fgSizer31 = wx.FlexGridSizer( 0, 2, 0, 0 )
-        fgSizer31.AddGrowableCol( 1 )
-        fgSizer31.SetFlexibleDirection( wx.BOTH )
-        fgSizer31.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+        fgSizer3.Fit(self.panelBatch)
+        self.m_notebook3.AddPage(self.panelBatch, _(u"Batch"), False)
+        self.panelConfig = wx.Panel(self.m_notebook3, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
+        fgSizer31 = wx.FlexGridSizer(0, 2, 0, 0)
+        fgSizer31.AddGrowableCol(1)
+        fgSizer31.SetFlexibleDirection(wx.BOTH)
+        fgSizer31.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED)
 
-        self.staticTextURL = wx.StaticText( self.panelConfig, wx.ID_ANY, _(u"VATService URL"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticTextURL.Wrap( -1 )
+        self.staticTextURL = wx.StaticText(self.panelConfig, wx.ID_ANY, _(u"VATService URL"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticTextURL.Wrap(-1)
 
-        fgSizer31.Add( self.staticTextURL, 0, wx.ALL, 5 )
+        fgSizer31.Add(self.staticTextURL, 0, wx.ALL, 5)
+        self.textUrl = wx.TextCtrl(self.panelConfig, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer31.Add(self.textUrl, 1, wx.ALL | wx.EXPAND, 5)
+        self.staticTextInterface = wx.StaticText(self.panelConfig, wx.ID_ANY, _(u"Interface"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticTextInterface.Wrap(-1)
 
-        self.textUrl = wx.TextCtrl( self.panelConfig, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer31.Add( self.textUrl, 1, wx.ALL|wx.EXPAND, 5 )
+        fgSizer31.Add(self.staticTextInterface, 0, wx.ALL, 5)
+        comboBoxInterfaceChoices = [_(u"vies"), _(u"bzst")]
+        self.comboBoxInterface = wx.ComboBox(self.panelConfig, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, comboBoxInterfaceChoices, 0)
+        self.comboBoxInterface.SetSelection(0)
+        fgSizer31.Add(self.comboBoxInterface, 0, wx.ALL, 5)
+        self.staticTextLanguage = wx.StaticText(self.panelConfig, wx.ID_ANY, _(u"Language"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticTextLanguage.Wrap(-1)
 
-        self.staticTextInterface = wx.StaticText( self.panelConfig, wx.ID_ANY, _(u"Interface"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticTextInterface.Wrap( -1 )
+        fgSizer31.Add(self.staticTextLanguage, 0, wx.ALL, 5)
+        comboBoxLanguageChoices = [_(u"en"), _(u"de")]
+        self.comboBoxLanguage = wx.ComboBox(self.panelConfig, wx.ID_ANY, _(u"Combo!"), wx.DefaultPosition, wx.DefaultSize, comboBoxLanguageChoices, 0)
+        self.comboBoxLanguage.SetSelection(0)
+        fgSizer31.Add(self.comboBoxLanguage, 0, wx.ALL, 5)
+        self.staticTextCSVDelimiter = wx.StaticText(self.panelConfig, wx.ID_ANY, _(u"CSV delimiter"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticTextCSVDelimiter.Wrap(-1)
 
-        fgSizer31.Add( self.staticTextInterface, 0, wx.ALL, 5 )
-
-        comboBoxInterfaceChoices = [ _(u"vies"), _(u"bzst") ]
-        self.comboBoxInterface = wx.ComboBox( self.panelConfig, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, comboBoxInterfaceChoices, 0 )
-        self.comboBoxInterface.SetSelection( 0 )
-        fgSizer31.Add( self.comboBoxInterface, 0, wx.ALL, 5 )
-
-        self.staticTextLanguage = wx.StaticText( self.panelConfig, wx.ID_ANY, _(u"Language"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticTextLanguage.Wrap( -1 )
-
-        fgSizer31.Add( self.staticTextLanguage, 0, wx.ALL, 5 )
-
-        comboBoxLanguageChoices = [ _(u"en"), _(u"de") ]
-        self.comboBoxLanguage = wx.ComboBox( self.panelConfig, wx.ID_ANY, _(u"Combo!"), wx.DefaultPosition, wx.DefaultSize, comboBoxLanguageChoices, 0 )
-        self.comboBoxLanguage.SetSelection( 0 )
-        fgSizer31.Add( self.comboBoxLanguage, 0, wx.ALL, 5 )
-
-        self.staticTextCSVDelimiter = wx.StaticText( self.panelConfig, wx.ID_ANY, _(u"CSV delimiter"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        self.staticTextCSVDelimiter.Wrap( -1 )
-
-        fgSizer31.Add( self.staticTextCSVDelimiter, 0, wx.ALL, 5 )
-
-        self.textCSVdelimiter = wx.TextCtrl( self.panelConfig, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer31.Add( self.textCSVdelimiter, 0, wx.ALL, 5 )
-
-        self.buttonSaveConfig = wx.Button( self.panelConfig, wx.ID_ANY, _(u"Save"), wx.DefaultPosition, wx.DefaultSize, 0 )
-        fgSizer31.Add( self.buttonSaveConfig, 0, wx.ALL, 5 )
-
-
-        self.panelConfig.SetSizer( fgSizer31 )
+        fgSizer31.Add(self.staticTextCSVDelimiter, 0, wx.ALL, 5)
+        self.textCSVdelimiter = wx.TextCtrl(self.panelConfig, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer31.Add(self.textCSVdelimiter, 0, wx.ALL, 5)
+        self.buttonSaveConfig = wx.Button(self.panelConfig, wx.ID_ANY, _(u"Save"), wx.DefaultPosition, wx.DefaultSize, 0)
+        fgSizer31.Add(self.buttonSaveConfig, 0, wx.ALL, 5)
+        self.panelConfig.SetSizer(fgSizer31)
         self.panelConfig.Layout()
-        fgSizer31.Fit( self.panelConfig )
-        self.m_notebook3.AddPage( self.panelConfig, _(u"Configuration"), True )
+        fgSizer31.Fit(self.panelConfig)
+        self.m_notebook3.AddPage(self.panelConfig, _(u"Configuration"), True)
 
-        bSizer2.Add( self.m_notebook3, 1, wx.EXPAND |wx.ALL, 5 )
-
-
-        self.SetSizer( bSizer2 )
+        bSizer2.Add(self.m_notebook3, 1, wx.EXPAND | wx.ALL, 5)
+        self.SetSizer(bSizer2)
         self.Layout()
-        self.mainmenu = wx.MenuBar( 0 )
+        self.mainmenu = wx.MenuBar(0)
         self.file = wx.Menu()
-        self.file_close = wx.MenuItem( self.file, ID_CLOSE, _(u"Close"), _(u"Close vatservice"), wx.ITEM_NORMAL )
-        self.file_close.SetBitmap( wx.NullBitmap )
-        self.file.Append( self.file_close )
+        self.file_close = wx.MenuItem(self.file, ID_CLOSE, _(u"Close"), _(u"Close vatservice"), wx.ITEM_NORMAL)
+        self.file_close.SetBitmap(wx.NullBitmap)
+        self.file.Append(self.file_close)
 
-        self.mainmenu.Append( self.file, _(u"File") )
+        self.mainmenu.Append(self.file, _(u"File"))
 
         self.help = wx.Menu()
-        self.github = wx.MenuItem( self.help, ID_GITHUB, _(u"github"), _(u"Go to GitHub Repository"), wx.ITEM_NORMAL )
-        self.help.Append( self.github )
+        self.github = wx.MenuItem(self.help, ID_GITHUB, _(u"github"), _(u"Go to GitHub Repository"), wx.ITEM_NORMAL)
+        self.help.Append(self.github)
 
-        self.update = wx.MenuItem( self.help, wx.ID_ANY, _(u"Update"), wx.EmptyString, wx.ITEM_NORMAL )
-        self.help.Append( self.update )
+        self.update = wx.MenuItem(self.help, wx.ID_ANY, _(u"Update"), wx.EmptyString, wx.ITEM_NORMAL)
+        self.help.Append(self.update)
 
-        self.about = wx.MenuItem( self.help, ID_ABOUT, _(u"About"), _(u"About vatservice-gui"), wx.ITEM_NORMAL )
-        self.help.Append( self.about )
+        self.about = wx.MenuItem(self.help, ID_ABOUT, _(u"About"), _(u"About vatservice-gui"), wx.ITEM_NORMAL)
+        self.help.Append(self.about)
 
-        self.mainmenu.Append( self.help, _(u"Help") )
+        self.mainmenu.Append(self.help, _(u"Help"))
 
-        self.SetMenuBar( self.mainmenu )
+        self.SetMenuBar(self.mainmenu)
 
-
-        self.Centre( wx.BOTH )
+        self.Centre(wx.BOTH)
 
         # Connect Events
-        self.Bind( wx.EVT_SHOW, self.loadConfig )
-        self.clearButton.Bind( wx.EVT_BUTTON, self.clearFunc )
-        self.buttonValidate1.Bind( wx.EVT_BUTTON, self.validateSingle )
-        self.buttonValidate.Bind( wx.EVT_BUTTON, self.validateBatch )
-        self.buttonSaveConfig.Bind( wx.EVT_BUTTON, self.saveConfig )
-        self.Bind( wx.EVT_MENU, self.vatserviceClose, id = self.file_close.GetId() )
-        self.Bind( wx.EVT_MENU, self.vatserviceGitHub, id = self.github.GetId() )
-        self.Bind( wx.EVT_MENU, self.checkForUpdates, id = self.update.GetId() )
-        self.Bind( wx.EVT_MENU, self.vatserviceAbout, id = self.about.GetId() )
+        self.Bind(wx.EVT_SHOW, self.loadConfig)
+        self.clearButton.Bind(wx.EVT_BUTTON, self.clearFunc)
+        self.buttonValidate1.Bind(wx.EVT_BUTTON, self.validateSingle)
+        self.buttonValidate.Bind(wx.EVT_BUTTON, self.validateBatch)
+        self.buttonSaveConfig.Bind(wx.EVT_BUTTON, self.saveConfig)
+        self.Bind(wx.EVT_MENU, self.vatserviceClose, id=self.file_close.GetId())
+        self.Bind(wx.EVT_MENU, self.vatserviceGitHub, id=self.github.GetId())
+        self.Bind(wx.EVT_MENU, self.checkForUpdates, id=self.update.GetId())
+        self.Bind(wx.EVT_MENU, self.vatserviceAbout, id=self.about.GetId())
 
-    def __del__( self ):
+    def __del__(self):
         pass
-
-
     # Virtual event handlers, override them in your derived class
-    def loadConfig( self, event ):
+
+    def loadConfig(self, event):
         event.Skip()
 
-    def clearFunc( self, event ):
+    def clearFunc(self, event):
         event.Skip()
 
-    def validateSingle( self, event ):
+    def validateSingle(self, event):
         event.Skip()
 
-    def validateBatch( self, event ):
+    def validateBatch(self, event):
         event.Skip()
 
-    def saveConfig( self, event ):
+    def saveConfig(self, event):
         event.Skip()
 
-    def vatserviceClose( self, event ):
+    def vatserviceClose(self, event):
         event.Skip()
 
-    def vatserviceGitHub( self, event ):
+    def vatserviceGitHub(self, event):
         event.Skip()
 
-    def checkForUpdates( self, event ):
+    def checkForUpdates(self, event):
         event.Skip()
 
-    def vatserviceAbout( self, event ):
+    def vatserviceAbout(self, event):
         event.Skip()
-
-

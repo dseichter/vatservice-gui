@@ -91,12 +91,12 @@ class CalcFrame(gui.MainFrame):
                             outputfile=self.m_filePickerOutput.GetPath(),
                             type=helper.load_value_from_json_file('interface'),
                             lang=helper.load_value_from_json_file('language'))
-        
+
     def checkForUpdates(self, event):
         if helper.check_for_new_release():
             wx.MessageBox('A new release is available.', 'Update available', wx.OK | wx.ICON_INFORMATION)
         else:
-            wx.MessageBox('No new release available.', 'No update', wx.OK | wx.ICON_INFORMATION)        
+            wx.MessageBox('No new release available.', 'No update', wx.OK | wx.ICON_INFORMATION)
 
 
 # mandatory in wx, create an app, False stands for not deteriction stdin/stdout
