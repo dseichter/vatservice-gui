@@ -95,7 +95,13 @@ class CalcFrame(gui.MainFrame):
         self.textResultDetails.SetValue(json.dumps(message, indent=2))
 
     def validateBatch(self, event):
-        wx.MessageBox('Start the batch validation.', 'Batch Validation', wx.OK | wx.ICON_INFORMATION)
+        if wx.MessageBox('Are you sure you want to start the batch validation?', 'Batch Validation', wx.YES_NO | wx.ICON_HAND) == wx.NO:
+            return
+        
+        if self.m_filePickerOutput.GetPath() == '':
+            wx.MessageBox('Please select an output file.', 'No output file', wx.OK | wx.ICON_ERROR)
+            return
+        
         batch.validatebatch(inputfile=self.filePickerInput.GetPath(),
                             outputfile=self.m_filePickerOutput.GetPath(),
                             type=helper.load_value_from_json_file('interface'),
