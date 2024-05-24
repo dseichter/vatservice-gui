@@ -6,6 +6,8 @@ import gui
 import single
 import batch
 import helper
+import about_ui
+import icons
 
 # import common libraries
 import webbrowser
@@ -18,6 +20,7 @@ class CalcFrame(gui.MainFrame):
     def __init__(self, parent):
         # initialize parent class
         gui.MainFrame.__init__(self, parent)
+        
 
     # load the config file
     def loadConfig(self, event):
@@ -25,15 +28,6 @@ class CalcFrame(gui.MainFrame):
         self.comboBoxInterface.SetValue(helper.load_value_from_json_file('interface'))
         self.comboBoxLanguage.SetValue(helper.load_value_from_json_file('language'))
         self.textCSVdelimiter.SetValue(helper.load_value_from_json_file('delimiter'))
-
-        # load image from file
-        image = wx.Image("../images/favicon.png", wx.BITMAP_TYPE_ANY)
-        image = image.Scale(32, 32, wx.IMAGE_QUALITY_HIGH)
-        bitmap = image.ConvertToBitmap()
-        icon = wx.Icon()
-        # set the image as icon for the frame
-        icon.CopyFromBitmap(bitmap)
-        self.SetIcon(icon)
 
     # save the config file
     def saveConfig(self, event):
@@ -65,11 +59,6 @@ class CalcFrame(gui.MainFrame):
     def vatserviceGitHub(self, event):
         webbrowser.open_new_tab('https://github.com/dseichter/vatservice-gui')  # Add the URL of the GitHub repository
 
-    def vatserviceAbout(self, event):
-        wx.MessageBox('vatservice-gui\n\nA simple GUI for the vatservice library.',
-                      'About vatservice-gui',
-                      wx.OK | wx.ICON_INFORMATION)
-
     def validateSingle(self, event):
         wx.MessageBox('Start the single validation.', 'Single Validation', wx.OK | wx.ICON_INFORMATION)
         returncode, message = single.validatesingle(ownvat=self.textOwnvat.GetValue(),
@@ -99,6 +88,12 @@ class CalcFrame(gui.MainFrame):
                 webbrowser.open_new_tab(helper.RELEASES)
         else:
             wx.MessageBox('No new release available.', 'No update', wx.OK | wx.ICON_INFORMATION)
+            
+    def vatserviceAbout(self, event):
+        # open the about dialog
+        dlg = about_ui.dialogAbout(self)
+        dlg.ShowModal()
+        dlg.Destroy()
 
 
 # mandatory in wx, create an app, False stands for not deteriction stdin/stdout
