@@ -21,6 +21,9 @@ class CalcFrame(gui.MainFrame):
         # initialize parent class
         gui.MainFrame.__init__(self, parent)
         
+        # add the version to the label
+        self.SetTitle(helper.NAME + ' ' + helper.VERSION)
+        
         # specify all the icons
         gui.MainFrame.SetIcon(self, icons.tick_box.GetIcon())
         self.menuitemFileClose.SetBitmap(icons.cancel.GetBitmap().ConvertToImage().Rescale(16, 16).ConvertToBitmap())
