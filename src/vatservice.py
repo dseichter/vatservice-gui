@@ -28,6 +28,19 @@ class CalcFrame(gui.MainFrame):
         self.menuitemHelpUpdate.SetBitmap(icons.restart.GetBitmap().ConvertToImage().Rescale(16, 16).ConvertToBitmap())
         self.menuitemHelpAbout.SetBitmap(icons.info.GetBitmap().ConvertToImage().Rescale(16, 16).ConvertToBitmap())
         self.m_notebook3.SetSelection(0)
+        # create image list
+        self.imageList = wx.ImageList(16, 16)
+        # add the icons
+        self.imageList.Add(icons.document.GetBitmap().ConvertToImage().Rescale(16, 16).ConvertToBitmap())
+        self.imageList.Add(icons.microsoft_excel.GetBitmap().ConvertToImage().Rescale(16, 16).ConvertToBitmap())
+        self.imageList.Add(icons.settings.GetBitmap().ConvertToImage().Rescale(16, 16).ConvertToBitmap())
+        # set the image list
+        self.m_notebook3.AssignImageList(self.imageList)
+        # set the icons
+        self.m_notebook3.SetPageImage(0, 0)
+        self.m_notebook3.SetPageImage(1, 1)
+        self.m_notebook3.SetPageImage(2, 2)
+        
         
     # load the config file
     def loadConfig(self, event):
