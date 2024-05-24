@@ -3,11 +3,12 @@ import json
 import logging
 
 
-VERSION = "v0.0.1g"
+VERSION = "v2024-05-24"
 UPDATEURL = 'https://api.github.com/repos/dseichter/vatservice-gui/releases/latest'
 RELEASES = 'https://github.com/dseichter/vatservice-gui/releases'
-NAME = 'VATService GUI'
+NAME = 'VAT Service GUI'
 LICENCE = 'GPL-3.0'
+
 
 # load value from json file with given key
 def load_value_from_json_file(key):

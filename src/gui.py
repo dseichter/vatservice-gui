@@ -188,21 +188,21 @@ class MainFrame(wx.Frame):
         self.Layout()
         self.mainmenu = wx.MenuBar(0)
         self.file = wx.Menu()
-        self.file_close = wx.MenuItem(self.file, ID_CLOSE, _(u"Close"), _(u"Close vatservice"), wx.ITEM_NORMAL)
-        self.file_close.SetBitmap(wx.NullBitmap)
-        self.file.Append(self.file_close)
+        self.menuitemFileClose = wx.MenuItem(self.file, ID_CLOSE, _(u"Close"), _(u"Close vatservice"), wx.ITEM_NORMAL)
+        self.menuitemFileClose.SetBitmap(wx.NullBitmap)
+        self.file.Append(self.menuitemFileClose)
 
         self.mainmenu.Append(self.file, _(u"File"))
 
         self.help = wx.Menu()
-        self.github = wx.MenuItem(self.help, ID_GITHUB, _(u"github"), _(u"Go to GitHub Repository"), wx.ITEM_NORMAL)
-        self.help.Append(self.github)
+        self.menuitemHelpSupport = wx.MenuItem(self.help, ID_GITHUB, _(u"Support..."), _(u"Go to GitHub Repository"), wx.ITEM_NORMAL)
+        self.help.Append(self.menuitemHelpSupport)
 
-        self.update = wx.MenuItem(self.help, wx.ID_ANY, _(u"Update"), wx.EmptyString, wx.ITEM_NORMAL)
-        self.help.Append(self.update)
+        self.menuitemHelpUpdate = wx.MenuItem(self.help, wx.ID_ANY, _(u"Check for updates"), wx.EmptyString, wx.ITEM_NORMAL)
+        self.help.Append(self.menuitemHelpUpdate)
 
-        self.about = wx.MenuItem(self.help, ID_ABOUT, _(u"About"), _(u"About vatservice-gui"), wx.ITEM_NORMAL)
-        self.help.Append(self.about)
+        self.menuitemHelpAbout = wx.MenuItem(self.help, ID_ABOUT, _(u"About..."), _(u"About vatservice-gui"), wx.ITEM_NORMAL)
+        self.help.Append(self.menuitemHelpAbout)
 
         self.mainmenu.Append(self.help, _(u"Help"))
 
@@ -216,10 +216,10 @@ class MainFrame(wx.Frame):
         self.buttonValidate1.Bind(wx.EVT_BUTTON, self.validateSingle)
         self.buttonValidate.Bind(wx.EVT_BUTTON, self.validateBatch)
         self.buttonSaveConfig.Bind(wx.EVT_BUTTON, self.saveConfig)
-        self.Bind(wx.EVT_MENU, self.vatserviceClose, id=self.file_close.GetId())
-        self.Bind(wx.EVT_MENU, self.vatserviceGitHub, id=self.github.GetId())
-        self.Bind(wx.EVT_MENU, self.checkForUpdates, id=self.update.GetId())
-        self.Bind(wx.EVT_MENU, self.vatserviceAbout, id=self.about.GetId())
+        self.Bind(wx.EVT_MENU, self.vatserviceClose, id=self.menuitemFileClose.GetId())
+        self.Bind(wx.EVT_MENU, self.vatserviceGitHub, id=self.menuitemHelpSupport.GetId())
+        self.Bind(wx.EVT_MENU, self.checkForUpdates, id=self.menuitemHelpUpdate.GetId())
+        self.Bind(wx.EVT_MENU, self.vatserviceAbout, id=self.menuitemHelpAbout.GetId())
 
     def __del__(self):
         pass
@@ -250,4 +250,67 @@ class MainFrame(wx.Frame):
         event.Skip()
 
     def vatserviceAbout(self, event):
+        event.Skip()
+
+# #########################################################################
+# # Class dialogAbout
+# #########################################################################
+
+
+class dialogAbout(wx.Dialog):
+
+    def __init__(self, parent):
+        wx.Dialog.__init__(self, parent, id=wx.ID_ANY, title=_(u"About VATService"), pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+
+        self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
+
+        bSizer2 = wx.BoxSizer(wx.VERTICAL)
+
+        self.bitmapLogo = wx.StaticBitmap(self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, 0)
+        bSizer2.Add(self.bitmapLogo, 0, wx.ALL, 5)
+        self.staticTextName = wx.StaticText(self, wx.ID_ANY, _(u"MyLabel"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticTextName.Wrap(-1)
+
+        bSizer2.Add(self.staticTextName, 0, wx.ALL, 5)
+        self.staticTextLicence = wx.StaticText(self, wx.ID_ANY, _(u"Licenced under"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticTextLicence.Wrap(-1)
+
+        bSizer2.Add(self.staticTextLicence, 0, wx.ALL, 5)
+        self.staticTextGithub = wx.StaticText(self, wx.ID_ANY, _(u"More on GitHub"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticTextGithub.Wrap(-1)
+
+        self.staticTextGithub.SetFont(wx.Font(wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, True, wx.EmptyString))
+        self.staticTextGithub.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+
+        bSizer2.Add(self.staticTextGithub, 0, wx.ALL, 5)
+        self.staticTextIcon8 = wx.StaticText(self, wx.ID_ANY, _(u"Icons by Icons8.com"), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.staticTextIcon8.Wrap(-1)
+
+        self.staticTextIcon8.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_GRAYTEXT))
+
+        bSizer2.Add(self.staticTextIcon8, 0, wx.ALL, 5)
+        m_sdbSizer2 = wx.StdDialogButtonSizer()
+        self.m_sdbSizer2OK = wx.Button(self, wx.ID_OK)
+        m_sdbSizer2.AddButton(self.m_sdbSizer2OK)
+        self.m_sdbSizer2Cancel = wx.Button(self, wx.ID_CANCEL)
+        m_sdbSizer2.AddButton(self.m_sdbSizer2Cancel)
+        m_sdbSizer2.Realize()
+        bSizer2.Add(m_sdbSizer2, 1, wx.EXPAND, 5)
+        self.SetSizer(bSizer2)
+        self.Layout()
+        bSizer2.Fit(self)
+        self.Centre(wx.BOTH)
+
+        # Connect Events
+        self.staticTextGithub.Bind(wx.EVT_LEFT_DOWN, self.openGithub)
+        self.staticTextIcon8.Bind(wx.EVT_LEFT_DOWN, self.openIcons8)
+
+    def __del__(self):
+        pass
+    # Virtual event handlers, override them in your derived class
+
+    def openGithub(self, event):
+        event.Skip()
+
+    def openIcons8(self, event):
         event.Skip()
