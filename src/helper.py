@@ -9,6 +9,7 @@ RELEASES = 'https://github.com/dseichter/vatservice-gui/releases'
 NAME = 'VAT Service GUI'
 LICENCE = 'GPL-3.0'
 
+
 # load value from json file with given key
 def load_value_from_json_file(key):
     with open('config.json', 'r') as f:

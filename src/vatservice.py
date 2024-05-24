@@ -20,10 +20,10 @@ class CalcFrame(gui.MainFrame):
     def __init__(self, parent):
         # initialize parent class
         gui.MainFrame.__init__(self, parent)
-        
+
         # add the version to the label
         self.SetTitle(helper.NAME + ' ' + helper.VERSION)
-        
+
         # specify all the icons
         gui.MainFrame.SetIcon(self, icons.tick_box.GetIcon())
         self.menuitemFileClose.SetBitmap(icons.cancel.GetBitmap().ConvertToImage().Rescale(16, 16).ConvertToBitmap())
@@ -43,8 +43,7 @@ class CalcFrame(gui.MainFrame):
         self.m_notebook3.SetPageImage(0, 0)
         self.m_notebook3.SetPageImage(1, 1)
         self.m_notebook3.SetPageImage(2, 2)
-        
-        
+
     # load the config file
     def loadConfig(self, event):
         self.textUrl.SetValue(helper.load_value_from_json_file('url'))
@@ -100,11 +99,11 @@ class CalcFrame(gui.MainFrame):
     def validateBatch(self, event):
         if wx.MessageBox('Are you sure you want to start the batch validation?', 'Batch Validation', wx.YES_NO | wx.ICON_HAND) == wx.NO:
             return
-        
+
         if self.m_filePickerOutput.GetPath() == '':
             wx.MessageBox('Please select an output file.', 'No output file', wx.OK | wx.ICON_ERROR)
             return
-        
+
         batch.validatebatch(inputfile=self.filePickerInput.GetPath(),
                             outputfile=self.m_filePickerOutput.GetPath(),
                             type=helper.load_value_from_json_file('interface'),
@@ -117,7 +116,7 @@ class CalcFrame(gui.MainFrame):
                 webbrowser.open_new_tab(helper.RELEASES)
         else:
             wx.MessageBox('No new release available.', 'No update', wx.OK | wx.ICON_INFORMATION)
-            
+
     def vatserviceAbout(self, event):
         # open the about dialog
         dlg = about_ui.dialogAbout(self)
