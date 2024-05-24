@@ -92,6 +92,14 @@ class CalcFrame(gui.MainFrame):
                             type=helper.load_value_from_json_file('interface'),
                             lang=helper.load_value_from_json_file('language'))
 
+    def checkForUpdates(self, event):
+        if helper.check_for_new_release():
+            result = wx.MessageBox('A new release is available.\nWould you like to open the download page?', 'Update available', wx.YES_NO | wx.ICON_INFORMATION)
+            if result == wx.YES:
+                webbrowser.open_new_tab(helper.RELEASES)
+        else:
+            wx.MessageBox('No new release available.', 'No update', wx.OK | wx.ICON_INFORMATION)
+
 
 # mandatory in wx, create an app, False stands for not deteriction stdin/stdout
 # refer manual for details
