@@ -21,7 +21,13 @@ class CalcFrame(gui.MainFrame):
         # initialize parent class
         gui.MainFrame.__init__(self, parent)
         
-
+        # specify all the icons
+        gui.MainFrame.SetIcon(self, icons.tick_box.GetIcon())
+        self.menuitemFileClose.SetBitmap(icons.cancel.GetBitmap().ConvertToImage().Rescale(16, 16).ConvertToBitmap())
+        self.menuitemHelpSupport.SetBitmap(icons.get_help.GetBitmap().ConvertToImage().Rescale(16, 16).ConvertToBitmap())
+        self.menuitemHelpUpdate.SetBitmap(icons.restart.GetBitmap().ConvertToImage().Rescale(16, 16).ConvertToBitmap())
+        self.menuitemHelpAbout.SetBitmap(icons.info.GetBitmap().ConvertToImage().Rescale(16, 16).ConvertToBitmap())
+        
     # load the config file
     def loadConfig(self, event):
         self.textUrl.SetValue(helper.load_value_from_json_file('url'))

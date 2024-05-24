@@ -1,7 +1,7 @@
 # import the newly created GUI file
 import gui
 
-# import workdir specific libraries
+# import vatservice-gui specific libraries
 import helper
 import webbrowser
 import icons
@@ -18,11 +18,11 @@ class dialogAbout(gui.dialogAbout):
 
         # specify all the icons
         gui.dialogAbout.SetIcon(self, icons.info.GetIcon())
-        self.bitmapLogo.SetBitmap(icons.opened_folder.GetBitmap())
+        self.bitmapLogo.SetBitmap(icons.tick_box.GetBitmap())
         self.Fit()
 
     def openGithub(self, event):
-        webbrowser.open_new_tab('https://github.com/dseichter/Workdir')  # Add the URL of the GitHub repository
+        webbrowser.open_new_tab('https://github.com/dseichter/vatservice-gui')  # Add the URL of the GitHub repository
 
     def openIcons8(self, event):
         webbrowser.open_new_tab('https://icons8.com/')

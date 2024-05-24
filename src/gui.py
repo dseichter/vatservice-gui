@@ -188,21 +188,21 @@ class MainFrame(wx.Frame):
         self.Layout()
         self.mainmenu = wx.MenuBar(0)
         self.file = wx.Menu()
-        self.file_close = wx.MenuItem(self.file, ID_CLOSE, _(u"Close"), _(u"Close vatservice"), wx.ITEM_NORMAL)
-        self.file_close.SetBitmap(wx.NullBitmap)
-        self.file.Append(self.file_close)
+        self.menuitemFileClose = wx.MenuItem(self.file, ID_CLOSE, _(u"Close"), _(u"Close vatservice"), wx.ITEM_NORMAL)
+        self.menuitemFileClose.SetBitmap(wx.NullBitmap)
+        self.file.Append(self.menuitemFileClose)
 
         self.mainmenu.Append(self.file, _(u"File"))
 
         self.help = wx.Menu()
-        self.github = wx.MenuItem(self.help, ID_GITHUB, _(u"github"), _(u"Go to GitHub Repository"), wx.ITEM_NORMAL)
-        self.help.Append(self.github)
+        self.menuitemHelpSupport = wx.MenuItem(self.help, ID_GITHUB, _(u"Support..."), _(u"Go to GitHub Repository"), wx.ITEM_NORMAL)
+        self.help.Append(self.menuitemHelpSupport)
 
-        self.update = wx.MenuItem(self.help, wx.ID_ANY, _(u"Update"), wx.EmptyString, wx.ITEM_NORMAL)
-        self.help.Append(self.update)
+        self.menuitemHelpUpdate = wx.MenuItem(self.help, wx.ID_ANY, _(u"Check for updates"), wx.EmptyString, wx.ITEM_NORMAL)
+        self.help.Append(self.menuitemHelpUpdate)
 
-        self.about = wx.MenuItem(self.help, ID_ABOUT, _(u"About"), _(u"About vatservice-gui"), wx.ITEM_NORMAL)
-        self.help.Append(self.about)
+        self.menuitemHelpAbout = wx.MenuItem(self.help, ID_ABOUT, _(u"About..."), _(u"About vatservice-gui"), wx.ITEM_NORMAL)
+        self.help.Append(self.menuitemHelpAbout)
 
         self.mainmenu.Append(self.help, _(u"Help"))
 
@@ -216,10 +216,10 @@ class MainFrame(wx.Frame):
         self.buttonValidate1.Bind(wx.EVT_BUTTON, self.validateSingle)
         self.buttonValidate.Bind(wx.EVT_BUTTON, self.validateBatch)
         self.buttonSaveConfig.Bind(wx.EVT_BUTTON, self.saveConfig)
-        self.Bind(wx.EVT_MENU, self.vatserviceClose, id=self.file_close.GetId())
-        self.Bind(wx.EVT_MENU, self.vatserviceGitHub, id=self.github.GetId())
-        self.Bind(wx.EVT_MENU, self.checkForUpdates, id=self.update.GetId())
-        self.Bind(wx.EVT_MENU, self.vatserviceAbout, id=self.about.GetId())
+        self.Bind(wx.EVT_MENU, self.vatserviceClose, id=self.menuitemFileClose.GetId())
+        self.Bind(wx.EVT_MENU, self.vatserviceGitHub, id=self.menuitemHelpSupport.GetId())
+        self.Bind(wx.EVT_MENU, self.checkForUpdates, id=self.menuitemHelpUpdate.GetId())
+        self.Bind(wx.EVT_MENU, self.vatserviceAbout, id=self.menuitemHelpAbout.GetId())
 
     def __del__(self):
         pass
@@ -260,7 +260,7 @@ class MainFrame(wx.Frame):
 class dialogAbout(wx.Dialog):
 
     def __init__(self, parent):
-        wx.Dialog.__init__(self, parent, id=wx.ID_ANY, title=_(u"About Workdir"), pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
+        wx.Dialog.__init__(self, parent, id=wx.ID_ANY, title=_(u"About VATService"), pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE)
 
         self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
 

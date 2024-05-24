@@ -2683,7 +2683,7 @@
             <property name="id">ID_CLOSE</property>
             <property name="kind">wxITEM_NORMAL</property>
             <property name="label">Close</property>
-            <property name="name">file_close</property>
+            <property name="name">menuitemFileClose</property>
             <property name="permission">none</property>
             <property name="shortcut"></property>
             <property name="unchecked_bitmap"></property>
@@ -2701,8 +2701,8 @@
             <property name="help">Go to GitHub Repository</property>
             <property name="id">ID_GITHUB</property>
             <property name="kind">wxITEM_NORMAL</property>
-            <property name="label">github</property>
-            <property name="name">github</property>
+            <property name="label">Support...</property>
+            <property name="name">menuitemHelpSupport</property>
             <property name="permission">none</property>
             <property name="shortcut"></property>
             <property name="unchecked_bitmap"></property>
@@ -2715,8 +2715,8 @@
             <property name="help"></property>
             <property name="id">wxID_ANY</property>
             <property name="kind">wxITEM_NORMAL</property>
-            <property name="label">Update</property>
-            <property name="name">update</property>
+            <property name="label">Check for updates</property>
+            <property name="name">menuitemHelpUpdate</property>
             <property name="permission">none</property>
             <property name="shortcut"></property>
             <property name="unchecked_bitmap"></property>
@@ -2729,8 +2729,8 @@
             <property name="help">About vatservice-gui</property>
             <property name="id">ID_ABOUT</property>
             <property name="kind">wxITEM_NORMAL</property>
-            <property name="label">About</property>
-            <property name="name">about</property>
+            <property name="label">About...</property>
+            <property name="name">menuitemHelpAbout</property>
             <property name="permission">none</property>
             <property name="shortcut"></property>
             <property name="unchecked_bitmap"></property>
@@ -2761,7 +2761,7 @@
       <property name="size"></property>
       <property name="style">wxDEFAULT_DIALOG_STYLE</property>
       <property name="subclass">; ; forward_declare</property>
-      <property name="title">About Workdir</property>
+      <property name="title">About VATService</property>
       <property name="tooltip"></property>
       <property name="two_step_creation">0</property>
       <property name="window_extra_style"></property>
@@ -3100,6 +3100,6 @@
           </object>
         </object>
       </object>
-    </object>    
+    </object>
   </object>
 </wxFormBuilder_Project>
