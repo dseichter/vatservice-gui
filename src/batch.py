@@ -40,7 +40,7 @@ def processcsv(inputfile, outputfile, type, lang):
     # iterate over the rows
     for index, row in data.iterrows():
         # validate the row
-        statuscode, message = single.validatesingle(key1=row['key1'],
+        _, message = single.validatesingle(key1=row['key1'],
                                                     key2=row['key2'],
                                                     ownvat=row['ownvat'],
                                                     foreignvat=row['foreignvat'],
@@ -71,7 +71,7 @@ def processxlsx(inputfile, outputfile, type, lang):
     # iterate over the rows
     for index, row in data.iterrows():
         # validate the row
-        statuscode, message = single.validatesingle(key1=row['key1'],
+        _, message = single.validatesingle(key1=row['key1'],
                                                     key2=row['key2'],
                                                     ownvat=row['ownvat'],
                                                     foreignvat=row['foreignvat'],
@@ -100,7 +100,7 @@ def processjson(inputfile, outputfile, type, lang):
     # iterate over the rows
     for index, row in data.iterrows():
         # validate the row
-        statuscode, message = single.validatesingle(key1=row['key1'],
+        _, message = single.validatesingle(key1=row['key1'],
                                                     key2=row['key2'],
                                                     ownvat=row['ownvat'],
                                                     foreignvat=row['foreignvat'],
