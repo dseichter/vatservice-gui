@@ -40,16 +40,16 @@ def processcsv(inputfile, outputfile, type, lang):
     # iterate over the rows
     for index, row in data.iterrows():
         # validate the row
-        statuscode, message = single.validatesingle(key1=row['key1'],
-                                                    key2=row['key2'],
-                                                    ownvat=row['ownvat'],
-                                                    foreignvat=row['foreignvat'],
-                                                    company=row['company'],
-                                                    street=row['street'],
-                                                    zip=row['zip'],
-                                                    town=row['town'],
-                                                    type=type,
-                                                    lang=lang)
+        _, message = single.validatesingle(key1=row['key1'],
+                                           key2=row['key2'],
+                                           ownvat=row['ownvat'],
+                                           foreignvat=row['foreignvat'],
+                                           company=row['company'],
+                                           street=row['street'],
+                                           zip=row['zip'],
+                                           town=row['town'],
+                                           type=type,
+                                           lang=lang)
         # append the result to the results list
         message = json.loads(message)
         results.append(message)
@@ -71,16 +71,16 @@ def processxlsx(inputfile, outputfile, type, lang):
     # iterate over the rows
     for index, row in data.iterrows():
         # validate the row
-        statuscode, message = single.validatesingle(key1=row['key1'],
-                                                    key2=row['key2'],
-                                                    ownvat=row['ownvat'],
-                                                    foreignvat=row['foreignvat'],
-                                                    company=row['company'],
-                                                    street=row['street'],
-                                                    zip=row['zip'],
-                                                    town=row['town'],
-                                                    type=type,
-                                                    lang=lang)
+        _, message = single.validatesingle(key1=row['key1'],
+                                           key2=row['key2'],
+                                           ownvat=row['ownvat'],
+                                           foreignvat=row['foreignvat'],
+                                           company=row['company'],
+                                           street=row['street'],
+                                           zip=row['zip'],
+                                           town=row['town'],
+                                           type=type,
+                                           lang=lang)
         # append the result to the results list
         message = json.loads(message)
         results.append(message)
@@ -100,16 +100,16 @@ def processjson(inputfile, outputfile, type, lang):
     # iterate over the rows
     for index, row in data.iterrows():
         # validate the row
-        statuscode, message = single.validatesingle(key1=row['key1'],
-                                                    key2=row['key2'],
-                                                    ownvat=row['ownvat'],
-                                                    foreignvat=row['foreignvat'],
-                                                    company=row['company'],
-                                                    street=row['street'],
-                                                    zip=row['zip'],
-                                                    town=row['town'],
-                                                    type=type,
-                                                    lang=lang)
+        _, message = single.validatesingle(key1=row['key1'],
+                                           key2=row['key2'],
+                                           ownvat=row['ownvat'],
+                                           foreignvat=row['foreignvat'],
+                                           company=row['company'],
+                                           street=row['street'],
+                                           zip=row['zip'],
+                                           town=row['town'],
+                                           type=type,
+                                           lang=lang)
         # append the result to the results list
         message = json.loads(message)
         results.append(message)

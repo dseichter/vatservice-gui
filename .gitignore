@@ -161,3 +161,5 @@ cython_debug/
 
 # ignore auto generated files by vatservice
 src/config.json
+
+.vscode/
